@@ -15,6 +15,9 @@ O sistema deve subtrair os gastos do saldo atual do usuário
 O sistema deve permitir que o usuário adicione saldo ao decorrer do mês*
 O sistema deve emitir um relatório de gastos referente ao mês indicado contendo o nome, valor, quantidade e data da compra.
 
+• 04/11 
+
+Estamos em fase de muita pesquisa para conseguir avançar com o projeto. Construímos alguns construtores, mas a falta do conhecimento básico no C# nos impede de ter um avanço significativo. Mas a busca pelo conhecimento continua, na próxima atualização o sistema está bem mais estruturado.
 
 
 
