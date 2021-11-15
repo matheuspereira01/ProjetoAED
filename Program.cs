@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -22,7 +22,7 @@ namespace ConsoleApp1
             Conta novaConta = new Conta(nomeUsuario, saldo, mes);
             Console.WriteLine("\nPronto, " + nomeUsuario + ", sua conta foi criada com sucesso! \nPressione qualquer tecla para continuar");
             Console.ReadKey();
-                
+
             while (true)
             {
                 Console.Write("\nDigite o dia da sua compra: ");
@@ -31,7 +31,7 @@ namespace ConsoleApp1
                 string nomeProd = Console.ReadLine();
                 Console.Write("Quantidade: ");
                 int qntProduto = int.Parse(Console.ReadLine());
-                Produto produtoEncontrado = SearchProduct(nomeProd);
+                Produto produtoEncontrado = PesqProduto(nomeProd);
                 if (produtoEncontrado == null)
                 {
                     Console.Write("Digite o valor unitário: ");
@@ -42,7 +42,7 @@ namespace ConsoleApp1
 
                 Console.WriteLine("\nProduto adicionado na sua lista de gastos");
                 novaConta.AdicionarGasto(produtoEncontrado, qntProduto);
-         
+
             Voltar:
                 Console.WriteLine("\nDeseja continuar adicionando novos produtos? [S/N]\n");
                 string decisao = Console.ReadLine().ToUpper();
@@ -58,7 +58,7 @@ namespace ConsoleApp1
             EscreverRelatorio();
             Console.WriteLine("\nO relatório foi escrito com sucesso! ");
             Console.ReadKey();
-            Produto SearchProduct(string product)
+            Produto PesqProduto(string product)
             {
                 foreach (Produto produto in produtosExistentes)
                 {
@@ -69,13 +69,13 @@ namespace ConsoleApp1
             }
             void EscreverRelatorio()
             {
-                List<Produto> produtosComprados = novaConta.getListProds();
+                List<Produto> produtosComprados = novaConta.getListaProds();
                 List<int> produtosValues = novaConta.getValueProds();
-                string path = "C:\\Users\\User\\Desktop\\API\\" + novaConta.getName() + ".txt";
+                string path = "C:\\Users\\User\\Desktop\\Daily Control AED l\\" + novaConta.getNome() + ".txt";
                 using (StreamWriter sw = new StreamWriter(path, append: true))
                 {
                     sw.Write("-------------[Compra do Mês de " + novaConta.getMes() + "]-------------\n");
-                    sw.Write("Dono da conta: " + novaConta.getName());
+                    sw.Write("Dono da conta: " + novaConta.getNome());
                     sw.Write("\nSaldo inicial: " + novaConta.getSaldo());
 
                     float[] diascomprados = new float[31];
@@ -118,13 +118,13 @@ namespace ConsoleApp1
         private string mes;
         List<Produto> produtosComprados = new List<Produto>();
         List<int> produtosValues = new List<int>();
-        public Conta(string accountName, float accountSaldo, string accountMount)
+        public Conta(string contaNome, float contaSaldo, string contaMes)
         {
-            this.nome = accountName;
-            this.saldo = accountSaldo;
-            this.mes = accountMount;
+            this.nome = contaNome;
+            this.saldo = contaSaldo;
+            this.mes = contaMes;
         }
-        public string getName()
+        public string getNome()
         {
             return nome;
         }
@@ -140,7 +140,7 @@ namespace ConsoleApp1
         {
             this.saldo += value;
         }
-        public List<Produto> getListProds()
+        public List<Produto> getListaProds()
         {
             return this.produtosComprados;
         }
