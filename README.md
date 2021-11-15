@@ -19,5 +19,16 @@ O sistema deve emitir um relatório de gastos referente ao mês indicado contend
 
 Estamos em fase de muita pesquisa para conseguir avançar com o projeto. Construímos alguns construtores, mas a falta do conhecimento básico no C# nos impede de ter um avanço significativo. Mas a busca pelo conhecimento continua, na próxima atualização o sistema está bem mais estruturado.
 
+• 11/11
+
+Nessa aula presencial de quinta-feira, conseguimos desenvolver o requisito integração de classes por meio de listas, onde o valor do produto na Classe Produto era diminuído do Saldo da Classe Valor. Esse era o que tínhamos mais dúvidas, mas em sala de aula conseguimos concluir essa parte.
+
+• 14/11 
+
+Fizemos a gravação do video de 3min demonstrando o funcionamento do sistema. Tentamos explicar o básico do código, porém o video ficava com 5min, então decidimos fazer uma apresentação ainda mais dinâmica, falando o motivo do projeto e o rodando o sistema no console.
+
+Link para vídeo YT:
+https://youtu.be/m8uF4dJe-qs
+
 
 
